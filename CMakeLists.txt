@@ -15,3 +15,6 @@ include_directories(/usr/local/include)
 
 add_executable(re2_sample re2_sample.cpp)
 target_link_libraries(re2_sample ${RE2_LIBRARY})
+
+add_executable(re2_quote_meta re2_quote_meta.cpp)
+target_link_libraries(re2_quote_meta ${RE2_LIBRARY})
