@@ -5,3 +5,4 @@ Makefile
 cmake_install.cmake
 re2_sample
 re2_quote_meta
+re2_replace
