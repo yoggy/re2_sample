@@ -49,3 +49,33 @@ $ ./re2_sample "\x41\x42\x43\x46" ABCDEFabcdef
 re_str=\x41\x42\x43\x46, target_str=ABCDEFabcdef, match=false
 </pre>
 
+<pre>
+$ ./re2_quote_meta
+usage : ./re2_quote_meta [regular expression]
+
+$ ./re2_quote_meta test
+re_str=test, quote_meta_str=test
+
+$ ./re2_quote_meta "*"
+re_str=*, quote_meta_str=\*
+
+$ ./re2_quote_meta "(test)"
+re_str=(test), quote_meta_str=\(test\)
+</pre>
+
+<pre>
+$ ./re2_replace
+usage : ./r2_replace [regular expression] [target string] [replace string]
+
+$ ./re2_replace test 123test123 TEST
+re_str=test, target_str=123test123, replace_str=TEST
+rv=true, result target_str=123TEST123
+
+$ ./re2_replace ana banana ANA
+re_str=ana, target_str=banana, replace_str=ANA
+rv=true, result target_str=bANAna
+
+$ ./re2_replace a.+a banana AAA
+re_str=a.+a, target_str=banana, replace_str=AAA
+rv=true, result target_str=bAAA
+</pre>
